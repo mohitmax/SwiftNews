@@ -17,9 +17,9 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+        tableView.estimatedRowHeight = 200
         
-        getRedditArticles()
+        getSwiftArticles()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,12 +30,11 @@ class ViewController: UITableViewController {
         }
     }
     
-    func getRedditArticles() {
+    func getSwiftArticles() {
         articleViewModel.getRedditArticles { (result) in
             switch result {
-            case .success(let articles):
-                print(articles)
-                self.articleViewModel.articles = articles
+            case .success(_):
+//                self.articleViewModel.articles = articles
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
