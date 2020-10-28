@@ -18,10 +18,11 @@ public class ArticleViewModel {
     
     func getRedditArticles(completion: @escaping (Result<[ArticleModel], Error>) -> Void) {
         let redditArticleUrlString = "https://www.reddit.com/r/swift/.json"
-        ArticlesNetworkAPI().getArticles(urlString: redditArticleUrlString) { (result) in
+        ArticlesNetworkAPI().getArticles(urlString: redditArticleUrlString) { [unowned self] (result) in
             print("Result: \n \(result)")
             switch result {
             case .success(let articles):
+                self.articles = articles
                 completion(.success(articles))
             case .failure(let error):
                 completion(.failure(error))

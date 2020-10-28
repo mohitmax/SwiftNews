@@ -44,7 +44,8 @@ public class ArticlesNetworkAPI: NSObject {
                                 if let pp = articleData["preview"] as? [String: Any] {
                                     if let images = pp["images"] as? [Any], let image = images.first as? [String: Any], let source = image["source"] as? [String: Any], let sourceImageUrlString = source["url"] as? String {
                                         print(sourceImageUrlString)
-                                        thumbnail = sourceImageUrlString
+                                        let modifiedUrlString = sourceImageUrlString.replacingOccurrences(of: "&amp;", with: "&")
+                                        thumbnail = modifiedUrlString
                                     }
                                 }
                                 
