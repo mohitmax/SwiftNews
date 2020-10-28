@@ -22,10 +22,6 @@ class ArticleDetailViewController: UIViewController {
         updateDetails()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     init(article: ArticleModel) {
         super.init(nibName: "ArticleDetailViewController", bundle: nil)
         self.article = article

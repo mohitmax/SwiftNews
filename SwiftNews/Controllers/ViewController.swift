@@ -10,14 +10,14 @@ import Foundation
 
 class ViewController: UITableViewController {
 
-    lazy var articleViewModel = ArticleViewModel(articles: loadSampleArticles())
+    lazy var articleViewModel = ArticleViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
+        tableView.tableFooterView = UIView(frame: .zero)
         
         getSwiftArticles()
     }
@@ -34,7 +34,6 @@ class ViewController: UITableViewController {
         articleViewModel.getRedditArticles { (result) in
             switch result {
             case .success(_):
-//                self.articleViewModel.articles = articles
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -42,15 +41,6 @@ class ViewController: UITableViewController {
                 print(error)
             }
         }
-    }
-    
-    func loadSampleArticles() -> [ArticleModel] {
-        var art = [ArticleModel]()
-        for index in 1...5 {
-            let art1 = ArticleModel(title: "Article number \(index) determines the policy of the indeterminate and calculative nature of the dimensions and the realms.")
-            art.append(art1)
-        }
-        return art
     }
 }
 
@@ -85,6 +75,5 @@ extension ViewController {
         
         navigationController?.pushViewController(articleDetailVC, animated: true)
     }
-    
     
 }
