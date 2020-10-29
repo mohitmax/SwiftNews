@@ -13,7 +13,7 @@ public class ArticlesNetworkAPI: NSObject {
         return URLSession(configuration: .ephemeral)
     }
     
-    func getArticles(urlString: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func getArticles(urlString: String, completion: @escaping (Result<ArticleResponseModel, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             return
         }
@@ -31,13 +31,13 @@ public class ArticlesNetworkAPI: NSObject {
                 return
             }
             
-            if let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
-               let resultDataKey = result["data"] as? [String: Any] {
-                completion(.success(resultDataKey))
-            } else {
-                if let error = error {
-                    completion(.failure(error))
-                }
+            do {
+                let articleResponseModel = try! JSONDecoder().decode(ArticleResponseModel.self, from: data)
+                print("Codable articleModel: \n \(articleResponseModel)")
+                completion(.success(articleResponseModel))
+            } catch let error {
+                print(error)
+                completion(.failure(error))
             }
         }.resume()
     }

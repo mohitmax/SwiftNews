@@ -15,7 +15,7 @@ class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var articleUrlButton: UIButton!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     
-    var article: ArticleModel?
+    var article: ArticleDetailsModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ArticleDetailViewController: UIViewController {
         articleUrlButton.isEnabled = article?.articleUrl != nil
     }
     
-    init(article: ArticleModel) {
+    init(article: ArticleDetailsModel) {
         super.init(nibName: "ArticleDetailViewController", bundle: nil)
         self.article = article
     }
@@ -50,7 +50,8 @@ class ArticleDetailViewController: UIViewController {
     }
 
     @IBAction func readArticleDetails(_ sender: UIButton) {
-        if let article = article, let articleUrlString = article.articleUrl {
+        if let article = article {
+            let articleUrlString = article.articleUrl
             let articleWebVC = ArticleWebViewController()
             articleWebVC.articleUrlString = articleUrlString
             articleWebVC.modalPresentationStyle = .popover

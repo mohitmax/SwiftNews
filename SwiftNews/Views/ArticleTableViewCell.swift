@@ -13,7 +13,7 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     
-    var articleModel: ArticleModel?
+    var articleModel: ArticleDetailsModel?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -21,7 +21,7 @@ class ArticleTableViewCell: UITableViewCell {
         titleLabel.text = ""
     }
     
-    func update(article: ArticleModel) {
+    func update(article: ArticleDetailsModel) {
         ImageCache.default.memoryStorage.config.totalCostLimit = 1
         
         titleLabel.text = article.title

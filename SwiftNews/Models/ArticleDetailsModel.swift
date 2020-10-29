@@ -42,6 +42,17 @@ struct ArticleDetailsModel: Codable {
         case thumbnailWidth = "thumbnail_width"
     }
     
+    mutating func updateThumbnailUrl() {
+        if self.thumbnailUrl?.caseInsensitiveCompare("self") == .orderedSame {
+            self.thumbnailUrl = nil
+            return
+        }
+        
+        if let thumbnailUrlString = thumbnailUrl, !thumbnailUrlString.isEmpty {
+            self.thumbnailUrl = thumbnailUrlString.replacingOccurrences(of: "&amp;", with: "&")
+        }
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: RootKeys.self)
         self.title = try container.decode(String.self, forKey: .title)
