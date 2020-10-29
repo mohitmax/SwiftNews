@@ -27,7 +27,12 @@ public class ArticleViewModel {
                         }
                     }
                     
-                    let article = ArticleModel(title: articleTitle, thumbnailUrl: thumbnail)
+                    var article = ArticleModel(title: articleTitle, thumbnailUrl: thumbnail)
+                    
+                    if let articleUrlString = articleData["url"] as? String {
+                        article = ArticleModel(title: articleTitle, thumbnailUrl: thumbnail, articleUrl: articleUrlString)
+                    }
+                    
                     articles.append(article)
                 }
             }

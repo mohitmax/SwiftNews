@@ -19,6 +19,7 @@
 		5D1CC4662547C04A00319171 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CC4652547C04A00319171 /* ArticleTableViewCell.swift */; };
 		5D1CC46B2547C12D00319171 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CC46A2547C12D00319171 /* ArticleModel.swift */; };
 		5D1CC4702547C16500319171 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CC46F2547C16500319171 /* ArticleViewModel.swift */; };
+		5DC0FE7825494D94001FF1CC /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0FE7725494D94001FF1CC /* ArticleWebViewController.swift */; };
 		5DC8DF9F2548D5FD00D24FDC /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8DF9D2548D5FD00D24FDC /* ArticleDetailViewController.swift */; };
 		5DC8DFA02548D5FD00D24FDC /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8DF9E2548D5FD00D24FDC /* ArticleDetailViewController.xib */; };
 		5DF9BDEE2547CFFA004D14B9 /* ArticlesNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9BDED2547CFFA004D14B9 /* ArticlesNetworkAPI.swift */; };
@@ -66,6 +67,7 @@
 		5D1CC4652547C04A00319171 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		5D1CC46A2547C12D00319171 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		5D1CC46F2547C16500319171 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		5DC0FE7725494D94001FF1CC /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebViewController.swift; sourceTree = "<group>"; };
 		5DC8DF9D2548D5FD00D24FDC /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		5DC8DF9E2548D5FD00D24FDC /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
 		5DF9BDED2547CFFA004D14B9 /* ArticlesNetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesNetworkAPI.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				5D1CC4312547B3A600319171 /* ViewController.swift */,
 				5DC8DF9D2548D5FD00D24FDC /* ArticleDetailViewController.swift */,
+				5DC0FE7725494D94001FF1CC /* ArticleWebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1CC4662547C04A00319171 /* ArticleTableViewCell.swift in Sources */,
+				5DC0FE7825494D94001FF1CC /* ArticleWebViewController.swift in Sources */,
 				5D1CC4322547B3A600319171 /* ViewController.swift in Sources */,
 				5DF9BDEE2547CFFA004D14B9 /* ArticlesNetworkAPI.swift in Sources */,
 				5D1CC42E2547B3A600319171 /* AppDelegate.swift in Sources */,

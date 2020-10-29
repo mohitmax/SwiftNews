@@ -70,10 +70,11 @@ extension ViewController {
 //MARK: UITableViewDelegate
 extension ViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articleViewModel.articles[indexPath.row]
-        let articleDetailVC = ArticleDetailViewController(article: article)
-        
-        navigationController?.pushViewController(articleDetailVC, animated: true)
+        if indexPath.row < articleViewModel.articles.count {
+            let article = articleViewModel.articles[indexPath.row]
+            let articleDetailVC = ArticleDetailViewController(article: article)
+            navigationController?.pushViewController(articleDetailVC, animated: false)
+        }
     }
     
 }

@@ -10,4 +10,5 @@ import Foundation
 struct ArticleModel {
     var title: String
     var thumbnailUrl: String?
+    var articleUrl: String?
 }

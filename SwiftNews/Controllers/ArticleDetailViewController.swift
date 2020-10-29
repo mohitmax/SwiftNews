@@ -12,7 +12,7 @@ class ArticleDetailViewController: UIViewController {
 
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleLabel: UILabel!
-    
+    @IBOutlet weak var articleUrlButton: UIButton!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     
     var article: ArticleModel?
@@ -20,6 +20,8 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDetails()
+        
+        articleUrlButton.isEnabled = article?.articleUrl != nil
     }
     
     init(article: ArticleModel) {
@@ -47,4 +49,13 @@ class ArticleDetailViewController: UIViewController {
         articleImage.kf.setImage(with: url, placeholder: UIImage(systemName: "xmark.seal"))
     }
 
+    @IBAction func readArticleDetails(_ sender: UIButton) {
+        if let article = article, let articleUrlString = article.articleUrl {
+            let articleWebVC = ArticleWebViewController()
+            articleWebVC.articleUrlString = articleUrlString
+            articleWebVC.modalPresentationStyle = .popover
+            self.present(articleWebVC, animated: true, completion: nil)
+        }
+    }
+    
 }
